@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Definimos las Etiquetas validas en nuestro codigo -->
+<!-- ****************************************************** -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<!-- ****************************************************** -->
+<!-- Definimos las Importaciones necesarias para el template principal -->
+<!-- ******************************************************************************************************************** -->
+
+<ui:insert name="metadata" />
+
+<h:head>
+
+	<link rel="icon" type="image/x-icon"
+		href="#{resource['images/favicon.ico']}" />
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="_csrf" content="${_csrf.token}" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	
+	<style>
+.ui-selectonemenu-label {
+	height: 30px !important
+}
+
+.ui-selectonemenu {
+	overflow: hidden;
+	height: 30px !important;
+}
+
+.ui-state-focus, .ui-state-hover {
+	text-shadow: none !important;
+	box-shadow: none !important;
+}
+</style>
+</h:head>
+
+<h:body id="bodyPage" class="hold-transition skin-blue sidebar-mini">
+
+	<div class="wrapper">
+		<header class="main-header">
+			
+		</header>
+		<aside class="main-sidebar">
+			
+		</aside>
+		<div class="content-wrapper">
+
+			<ui:insert name="content">
+			</ui:insert>
+			
+		</div>
+	</div>
+
+
+	<p:blockUI block="bodyPage" widgetVar="bui" id="bui">
+		
+	</p:blockUI>
+	<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+		<p:commandButton value="Cancelar" type="button"
+			styleClass="ui-confirmdialog-no ui-main-button-error"
+			icon="fas fa-times" />
+		<p:commandButton value="OK" type="button"
+			styleClass="ui-confirmdialog-yes ui-main-button-success"
+			icon="fas fa-check" />
+
+	</p:confirmDialog>
+</h:body>
+</html>
